@@ -1,5 +1,6 @@
 ﻿//----------------------------------------
 // Great Code Team (c) All rights reserved
+//----------------------------------------
 
 namespace Bank.Management.Console.Models
 {
