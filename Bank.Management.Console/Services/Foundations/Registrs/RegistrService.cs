@@ -26,9 +26,50 @@ namespace Bank.Management.Console.Services.Foundations.Registrs
                 : LogInUserValidation(user);
         }
 
-        public User SigUp(User user)
+        public User SignUp(User user)
         {
-            throw new NotImplementedException();
+            return user is null
+                ? InvalidSignUpUser()
+                : SignUpUserAndValidation(user);
+        }
+
+        private User SignUpUserAndValidation(User user)
+        {
+            if (String.IsNullOrWhiteSpace(user.Name)
+                || String.IsNullOrWhiteSpace(user.Password))
+            {
+                this.loggingBroker.LogError("User information is incomplete");
+                return new User();
+            }
+            else
+            {
+                User userInformation = this.registrBroker.AddUser(user);
+
+                if (user.Password.Length >= 8)
+                {
+                    if (userInformation is null)
+                    {
+                        this.loggingBroker.LogError("This user base is available.");
+                        return new User();
+                    }
+                    else
+                    {
+                        this.loggingBroker.LogInformation("User added successfully.");
+                        return user;
+                    }
+                }
+                else
+                {
+                    this.loggingBroker.LogError("Password does not contain 8 characters.");
+                    return new User();
+                }
+            }
+        }
+
+        private User InvalidSignUpUser()
+        {
+            this.loggingBroker.LogError("User information is null or empty.");
+            return new User();
         }
 
         private bool LogInUserValidation(User user)
