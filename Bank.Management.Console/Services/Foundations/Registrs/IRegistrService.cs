@@ -9,6 +9,6 @@ namespace Bank.Management.Console.Services.Foundations.Registrs
     internal interface IRegistrService
     {
         bool LogIn(User user);
-        User SigUp(User user);
+        User SignUp(User user);
     }
 }
