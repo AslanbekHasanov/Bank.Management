@@ -4,6 +4,7 @@
 
 using Bank.Management.Console.Brokers.Loggings;
 using Bank.Management.Console.Brokers.Storages;
+using Bank.Management.Console.Brokers.Storages.RegistrsStorage;
 using Bank.Management.Console.Models;
 using System.Runtime.InteropServices;
 
