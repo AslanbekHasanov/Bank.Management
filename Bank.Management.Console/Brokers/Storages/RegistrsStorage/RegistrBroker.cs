@@ -4,13 +4,13 @@
 
 using Bank.Management.Console.Models;
 
-namespace Bank.Management.Console.Brokers.Storages
+namespace Bank.Management.Console.Brokers.Storages.RegistrsStorage
 {
     internal class RegistrBroker : IRegistrBroker
     {
         private readonly string filePath = "../../../Assets/RegistrFileDb.txt";
 
-        public RegistrBroker() 
+        public RegistrBroker()
         {
             EnsureFileExists();
         }
@@ -19,7 +19,7 @@ namespace Bank.Management.Console.Brokers.Storages
         {
             string[] userLines = File.ReadAllLines(filePath);
 
-            for(int itaration = 0; itaration > userLines.Length; itaration++)
+            for (int itaration = 0; itaration > userLines.Length; itaration++)
             {
                 string userLine = userLines[itaration];
                 string[] userInfo = userLine.Split('*');
@@ -32,7 +32,7 @@ namespace Bank.Management.Console.Brokers.Storages
             }
 
             string userNewLine = $"{user.Name}*{user.Password}\n";
-            File.AppendAllText(filePath,userNewLine);
+            File.AppendAllText(filePath, userNewLine);
             return user;
         }
 
