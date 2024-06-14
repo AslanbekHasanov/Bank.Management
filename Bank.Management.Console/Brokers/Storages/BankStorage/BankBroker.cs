@@ -4,7 +4,7 @@
 
 using System.Linq;
 
-namespace Bank.Management.Console.Brokers.Storages.Bank
+namespace Bank.Management.Console.Brokers.Storages.BankStorage
 {
     internal class BankBroker : IBankBroker
     {
