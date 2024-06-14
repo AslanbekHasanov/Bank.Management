@@ -4,7 +4,7 @@
 
 using Bank.Management.Console.Models;
 
-namespace Bank.Management.Console.Brokers.Storages.Bank
+namespace Bank.Management.Console.Brokers.Storages.BankStorage
 {
     internal interface IBankBroker
     {
