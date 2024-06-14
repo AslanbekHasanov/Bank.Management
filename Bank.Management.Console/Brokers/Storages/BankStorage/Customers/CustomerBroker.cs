@@ -5,7 +5,7 @@
 using Bank.Management.Console.Models;
 using System.Security.AccessControl;
 
-namespace Bank.Management.Console.Brokers.Storages.Bank.Customers
+namespace Bank.Management.Console.Brokers.Storages.BankStorage.Customers
 {
     internal class CustomerBroker : ICustomerBroker
     {
